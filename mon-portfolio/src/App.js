@@ -1,38 +1,31 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import Header from './composants/Header'
 import Footer from './composants/Footer'
-import PhotoProfile from './img/moi.jpg'
+import Home from './routes/Home';
+import Projects from './routes/Projects'
 
 function App() {
   return (
     <div className="App">
-      <Header/>
       <main className='main'>
-        <section className='accueil_section'>
-          <div className='presentation'>
-            <h1 className='typewriter'>
-              Bonjour, je suis Dimitri Gonthier
-            </h1>
-            <p className='typewriter'>
-              Je suis développeur web front end
-            </p>
-          </div>
-         <img src={PhotoProfile} alt='photo de moi' className='spin_animation'/>
-        </section>
-
-        <section className='projects_section'>
-        <h1>
-              Bonjour, je suis Dimitri Gonthier
-            </h1>
-        </section>
-
-        <section className='contact_section'>
-        <h1>
-              Bonjour, je suis Dimitri Gonthier
-            </h1>
-        </section>
+        <Router>
+          <Header/>
+            <Routes>
+              <Route path="/" exact Component={Home} />
+              <Route path="/projects" Component={Projects} />
+              <Route path="*" Component={() => <Navigate to="/" />} />
+            </Routes>
+            <Footer/>
+        </Router>
+        <div className="background-animation">
+            <div className="circle"></div>
+            <div className="circle"></div>
+            <div className="circle"></div>
+        </div>
       </main>
-      <Footer/>
     </div>
   );
 }
