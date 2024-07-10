@@ -19,6 +19,12 @@ const Header = () => {
           }}>
           Projets
         </Link>
+        <Link to='/skills' 
+          style={{
+            color: location.pathname === '/skills' ? '#136a8a' : 'black'
+          }}>
+          Skills
+        </Link>
       </div>
     </header>
   );

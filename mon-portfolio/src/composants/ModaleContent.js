@@ -8,8 +8,8 @@ const ModaleContent = ({ img, title, description, onClose }) => {
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={img} alt='Image d un projet' className='img-fluid' />
-          <p>{description}</p>
+          {img ? <img src={img} alt='Image d un projet' className='img-fluid' /> : null}
+          {description}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={onClose}>Fermer</Button>

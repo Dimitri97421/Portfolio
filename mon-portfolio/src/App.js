@@ -6,6 +6,7 @@ import Header from './composants/Header'
 import Footer from './composants/Footer'
 import Home from './routes/Home';
 import Projects from './routes/Projects'
+import Skills from './routes/Skills'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Routes>
               <Route path="/" exact Component={Home} />
               <Route path="/projects" Component={Projects} />
+              <Route path="/skills" Component={Skills} />
               <Route path="*" Component={() => <Navigate to="/" />} />
             </Routes>
             <Footer/>
